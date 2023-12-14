@@ -12,6 +12,10 @@ Hypertext Markup Language = HTML
 elements로 구성됨.
 
 
-### 기본구조
+### 요소(Element)의 기본구조
+
+> <P> HELLO </p>
+
+1. 여는 태그(Opening tag) : 요소의 이름과, 열고 닫는 꺽쇠 괄호로 구성됨, 요소가 시작부터 효과가 적용된다.  인용문에서는 앞의 <P>
 
 ###
