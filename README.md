@@ -60,11 +60,22 @@ elements로 구성됨.
 
 + 주석 : HTML 문서에서 보이지 않으며 코드에 메모를 포함시켜 논리 또는 코딩을 설명할 수 있도록 하는 것.
 
-> \<p> My dog is very cute. </p\>
->
 > \<!-- \<p> 이것은 주석입니다.</p\> --\>
 
 
 ### 문서의 구조
+
+> \<!doctype html\>
+> \<html\>
+>  \<head\>
+>   \<meta charset="utf-8" /\>
+>   \<title>My test page</title\>
+>  \</head\>
+>  \<body\>
+>   \<p>This is my page</p\>
+>  \</body\>
+> \</html\>
+
+
 
 
