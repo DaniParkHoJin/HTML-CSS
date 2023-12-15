@@ -66,15 +66,17 @@ elements로 구성됨.
 ### 문서의 구조
 
 > \<!doctype html\><br>
-> \<html\>
->  \<head\>
->   \<meta charset="utf-8" /\>
->   \<title>My test page</title\>
->  \</head\>
->  \<body\>
->   \<p>This is my page</p\>
->  \</body\>
+> \<html\><br>
+>  \<head\><br>
+>   \<meta charset="utf-8" / \><br>
+>   \<title>My test page</title\><br>
+>  \</head\><br>
+>  \<body\><br>
+>   \<p>This is my page</p\><br>
+>  \</body\><br>
 > \</html\>
+
+
 
 
 
