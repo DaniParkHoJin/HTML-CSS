@@ -65,7 +65,7 @@ elements로 구성됨.
 
 ### 문서의 구조
 
-> \<!doctype html\>
+> \<!doctype html\><br>
 > \<html\>
 >  \<head\>
 >   \<meta charset="utf-8" /\>
