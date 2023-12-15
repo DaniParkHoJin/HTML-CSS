@@ -67,13 +67,13 @@ elements로 구성됨.
 
 > \<!doctype html\><br>
 > \<html\><br>
->   \<head\><br>
->    \<meta charset="utf-8" / \><br>
->    \<title>My test page</title\><br>
->   \</head\><br>
->   \<body\><br>
->    \<p>This is my page</p\><br>
->   \</body\><br>
+> \  <head\><br>
+> \   <meta charset="utf-8" / \><br>
+> \   <title>My test page</title\><br>
+> \  </head\><br>
+> \  <body\><br>
+> \   <p>This is my page</p\><br>
+> \  </body\><br>
 > \</html\>
 
 
