@@ -31,12 +31,6 @@
 
 > \<P> My dog is <Strong\><Strong>very</Strong>\</Strong\> cute. </p\>
 
-### 블럭 레벨 요소, 인라인 요소
-
-+ 블럭 레벨 요소(Block-level elements) : 블록(Block)를 만드는 요소, 블록 레벨 요소 이전과 이후에 줄 바꿈이 있다.인라인 요소에 중첩될 수 없으나 블럭 레벨 사이는 중첩될 수 있다.
-
-+ 인라인 요소(Inline elements) : 항상 블록 레벨 요소 안에 있어야 한다. 문장, 단어 같은 작은 부분에만 적용할 수 있다. 줄 바꿈이 없다.
-
 ### 빈 요소
 
 + 여는 태그, 내용. 닫는 태그 패턴이 아닌, 문서에 무언가를 첨부하기 위한 단일 태그 요소.
@@ -134,8 +128,14 @@ s- rc - 이미지 경로를 지정한다.
 
 + 헤더는 글의 제목이나 부제목을 표기할 때 사용한다.
 + 태그는 h1~h6까지 있으며, 숫자가 작을수록 크기가 크다.
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
 ```
-예) 
 <h1>Heading 1</h1>
 
 <h2>Heading 2</h2>
@@ -148,12 +148,7 @@ s- rc - 이미지 경로를 지정한다.
 
 <h6>Heading 6</h6>
 ```
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
+
 
 #### 주의사항
 + h1~6 태그의 용도로 헤더 태그를 사용하여야 하며 단순히 글자 크기를 크게하거나(font-size) 강조(bold)표기 용도로 사용하지 말아야 한다. 
@@ -248,30 +243,8 @@ HTML \<a\>태그는 하이퍼링크를 정의합니다. a 태그에서 가장 �
 
     - th는 데이터의 열, 세로줄
 
-    - thead는 헤더영역,  tbody는 본문영역,  tfoot는 본문영역  으로 구분하여 사용할 수 있다. 
-```
-<table>
-<thead>
-   <tr>
-     <th>국어</th>
-     <th>수학</th>
-     <th>영어</th>
-   </tr>	
-</thead>
-<tbody>
-   <tr>
-      <td>80</td>
-      <td>73</td>
-      <td>85</td> 
-   </tr>
-   <tr>
-      <td>85</td>
-      <td>85</td>
-      <td>88</td>
-   </tr>
-</tbody>
-</table>
-```
+    - thead는 헤더영역,  tbody는 본문영역,  tfoot는 본문영역  으로 구분하여 사용할 수 있다.
+
 <table>
 <thead>
    <tr>
@@ -295,3 +268,194 @@ HTML \<a\>태그는 하이퍼링크를 정의합니다. a 태그에서 가장 �
 </table>
 
 
+```
+<table>
+<thead>
+   <tr>
+     <th>국어</th>
+     <th>수학</th>
+     <th>영어</th>
+   </tr>	
+</thead>
+<tbody>
+   <tr>
+      <td>80</td>
+      <td>73</td>
+      <td>85</td> 
+   </tr>
+   <tr>
+      <td>85</td>
+      <td>85</td>
+      <td>88</td>
+   </tr>
+</tbody>
+</table>
+```
+
+### HTML 리스트(Lists)태그
+
+#### 순서 없는 리스트(Unordered HTML List)
+
+- 순서 없는 리스트는 <ul>태그로 시작하며 리스트 항목들은 <li>~</li> 태그를 사용한다.
+
+```
+<ul>
+<li>항목1</li>
+  <li>항목2</li>
+  <li>항목3</li> 
+</ul>
+```
+
+- 리스트 구분 기본 값은 disc로 색이 채워진 둥근 점 모양이다.
+- 리스트 구분 값은 css의 list-style-type으로 지정할 수 있다.
+	- disc - 기본 값, 채워진 둥근 점
+	- circle - 책이 미워진 둥근 점
+	- square - 사각형 모양 점
+	- none - 구분값 없음
+
+- 적용방식
+```
+<ul style="list-style-type:disc 또는 circle, square, none 중 하나 입력">
+```
+
+
+#### 순서 있는 리스트(Ordered HTML List)
+
+- 순서 있는 리스트는 \<ol\>태그로 시작하며 리스트 항목들은 \<li\>~\</li\> 태그를 사용한다.
+
+```
+<ol>
+  <li>항목</li>
+  <li>항목</li>
+  <li>항목</li>
+</ol>
+```
+
+- 리스트 구분 값은 순서가 있는 숫자나 문자로 표현이 되며 다음과 같은 타입으로 지정할 수 있다.
+
+- \1 - 기본값이며 숫자 순서.
+- A - 대문자 알파벳 순서.
+- a - 소문자 알파벳 순서.
+- I - 대문자 로마 숫자 형식.
+- i - 소문자 로마 숫자 형식.
+
+   - 적용방식
+```
+<ol type="1 또는 A, a, I, i 중 하나 입력">
+```
+
+- 시작번호 지정할 경우 start="시작번호"로 지정하며 숫자를 변경할 경우 \<li value="변경숫자"\>로 입력.
+
+#### 설명 리스트(Description List)
+
+- 용어에 대한 설명을 위한 구조로 구성되어 있는 리스트.
+- \<dl\>~\</dl\> 태그이며 하나의 행을 구성. 
+- 각 행은 \<dt\>~\</dt\>(항목명)와 \<dd\>~\</dd\>(항목 설명)으로 구성.
+
+```
+<dl>
+   <dt>상품명</dt>
+   <dd>갤럭시 S24</dd>
+</dl>
+<dl>
+   <dt>판매가</dt>
+   <dd>1,500,000원</dd>
+</dl>
+```
+
+### 블럭 레벨 요소, 인라인 요소
+
+#### 블럭 레벨 요소(Block-level elements)
+
+   + 블록(Block)를 만드는 요소, 항상 줄개행을 한다. width(너비), height(높이)를 가질 수 있다. 아래 위 또는 왼쪽 오른족에 공백(margin)을 지정할 수 있다.
+
+   + black-level 태그(요소)
+```
+<address>
+<article>
+<aside>
+<blockquote>
+<canvas>
+<dd>
+<div>
+<dl>
+<dt>
+<fieldset>
+<figcaption>
+<figure>
+<footer>
+<form>
+<h1>
+<h6>
+<header>
+<hr>
+<li>
+<main>
+<nav>
+<noscript>
+<ol>
+<p>
+<pre>
+<section>
+<table>
+<tfoot>
+<ul>
+<video>
+```
+
+#### 인라인 요소(Inline elements)
+
+   + 항상 블록 레벨 요소 안에 있어야 한다. 문장, 단어 같은 작은 부분에만 적용할 수 있다. 줄개행이 없다. 공간을 지정할 수 없다. 요소 안에 있는 내용 만큼의 공간만 차지한다. 위 아래 공백(margin)을 지정할 수 없으나, 내부 공백(padding)은 지정할 수 있다.
+
+   + Inline-level 태그(요소)
+```
+<a>
+<abbr>
+<acronym>
+<b>
+<bdo>
+<big>
+<br>
+<button>
+<cite>
+<code>
+<dfn>
+<em>
+<i>
+<img>
+<input>
+<kbd>
+<label>
+<map>
+<object>
+<output>
+<q>
+<samp>
+<script>
+<select>
+<small>
+<span>
+<strong>
+<sub>
+<sup>
+<textarea>
+<time>
+<tt>
+<var>
+```
+
+#### 인라인 블럭 요소(Inline-block Level)
+
+   + block-level, inline-level 외에도 이 둘의 속성을 모두 가지고 있는 inline-block-level 요소.
+
+   + 각 요소 자체에 자연적으로 있는 속성은 아니며, style 지정을 하여 적용한다.
+
+   + block-level 속성은 style 지정을 통해 inline, inline-block level 속성으로 변경 가능. 
+
+   + inline-level 속성은 style 지정을 통해 inline-block, block-level 속성으로 변경 가능.
+
+   + style 적용시
+```
+div { display: inline-block; }
+span { display: block; }
+```
