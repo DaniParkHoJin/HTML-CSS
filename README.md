@@ -536,19 +536,6 @@ HTML \<a\>태그는 하이퍼링크를 정의합니다. a 태그에서 가장 �
 + **주의**
 + class명은 대소문자를 구분하므로 정확하게 입력해야한다.<br>(class='home'와 class='Home'는 서로 다른 class로 인식한다.)
 
-<style>
-.home { 
-  background-color: skyblue;
-  color: red;
-  padding: 20px;
-  margin: 20px;
-}
-</style>
-
-<div class='home'>서울</div>
-<div class='home'>인천</div>
-<div class='home'>부산</div>
-
 ```
 <style>
 .home { 
@@ -570,14 +557,6 @@ HTML \<a\>태그는 하이퍼링크를 정의합니다. a 태그에서 가장 �
 + 복수로 지정하거나 중복될 때에는 class를 사용한다.
 + 스타일시트에서 요소 선택시 샾(#)으로 id를 지정한다.(셀렉터)<br>id='page1'인 경우 #page1
 + 참고) 자바스크립트에서도 유일값으로 1개만 선택이 가능하다(document.getElementById)
-
-<style>
-#page1 { 
-  background-color: skyblue;
-  color: yellow;
-}
-</style>
-<h1 id='page1'>페이지 항목</h1>
 
 ```
 <style>
@@ -636,8 +615,6 @@ window.addEventListener("load", function(e) {
 
 + 태그의 속성명으로 자바스크립트를 실행할 수 있다. 다만 자바스크립트, 스타일시트를 HTML에 혼재하지 않고 분리하여 쓰는것이 좋으므로 꼭 필요한 경우에만 적용한다.<br>(혼재해 사용할 경우 소스가 HTML에 분산되어 있어 유지보수시에 어려움이 따른다. 따라서 따로 용도에 맞는 외부 파일로 분리하여 관리하는것이 좋다.)
 
-> <button onclick="alert('클릭하셨습니다.');">클릭</button>
-
 ```
 <button onclick="alert('클릭하셨습니다.');">클릭</button>
 ```
@@ -667,3 +644,357 @@ window.addEventListener("load", function(e) {
 
 + test2/test3.html은 base에 정의한 기본 URL의 상대 경로가 되므로 http://test.com/test1/test2/test.html 의 경로도 이동하게 된다.
 + 링크뿐 아니라 내부에 선언된 외부 스타일시트, 이미지, 외부 자바크립트 경로 역시 동일하게 base값이 적용된다.
+
+### HTML 시멘틱 요소(Semantic Elements)
+
++ 시멘틱 요소는 의미를 가진 요소를 뜻한다. 
++ 시멘틱 요소를 사용하면 브라우저와 개발자 모두에게 그 의미를 명확하게 설명하는 것이다.
++ 즉, 어느부분이 제목이고 어떤 부분이 내용인지, 어느부분이 메뉴인지 쉽게 파악할 수 있다.
++ 특정한 태그에 의미를 부여해서 웹페이지를 만드는것을 시멘틱웹이라 표현한다.
+
+
++ 비의미적 요소 예
+	+ \<div\> 및 \<span\> : 공간을 차지하나 그 영역이나 사용용도에 대한 의미는 없다.
+
++ 의미적 요소 예
+	- \<form\>, \<table\> \<article\> 등 : 영역, 사용용도에 대한 의미를 쉽게 알 수 있다.
+
+#### 웹페이지의 영역을 정의하는 의미 요소
+
++ \<header\> : 헤더영역을 정의<br>하나 이상의 제목요소(\<h1\>~\<h6\>), 로고 또는 아이콘, 저자 정보
+
++ \<nav\> : 탐색 링크 세트 정의<br>메인 메뉴등 GNB(Global Navigation Bar) 영역을 지정
+
++ \<section\> : 문서의 섹션을 정의<br>section은 공통 영역에 속하는 여러개의 article로 구성할 수 있다.
++ \<article\> : 독립적인 컨텐츠를 정의 
+
++ \<aside\> : 컨텐츠 이외의 컨텐츠를 정의(예 : 사이드 바)<br>서브 메뉴또는 페이지내부 메뉴를 지정. LNB(Local Navigation Bar)
+
++ \<footer\> : 문서 또는 섹션의 바닥 글을 정의<br>저자 정보, 저장권정보, 연락정보, 사이트 맵, 맨 위로 링크, 관련된 문서 등
+
++ \<details\> : 사용자가 필요에 따라 열고 닫을 수 있는 추가 세부 정보를 정의
+
++ \<summary\> : \<details\>요소의 제목을 정의
+
++ \<figure\> : 그림, 도표, 사진, 코드 목록과 같은 태그를 지정 자체에 포함 된 내용
+
++ \<figcaption\> : 캡션을 지정하는 figure 하위 요소
+
+```
+<figure>
+   <img src="photo.jpg" alt="사진">
+   <figcaption>사진 - 한국 경복궁</figcaption>
+</figure>
+```
+
++ \<main\> - 문서에서 메인영역을 명시할 경우 사용
++ \<mark\> - 문구에서 강조해야 할 부분을 정의
++ \<time\> - 날짜/시간을 정의 
+
++ 시멘틱 태그는 모두 div 태그와 같은 기능을 수행하는 태그다. 그러나 태그에 의미를 가지므로 검색엔진이나 그 이외의 기계적인 동작들이 웹페이지를 쉽게 이해할 수 있게 된다.
+
+
+### HTML 엔티티(Entities)
++ HTML에서 일부 문자는 예약되어 있고 예약되어 있는 문자를 엔티티이름으로 사용할 수 있다.
++ 텍스트에서 작음(<) 또는 보다 큼(>)기호를 사용할때 태그로 오인될 수 있어 레이아웃 깨짐이 발생할 가능성도 있다.
+
+   + <p> 1은 9보다 작다.(1 &lt; 9)</p>
+   + <p>9는 1보다 크다.(3 &gt; 1)</p>
+
+```
+~보다 작다(<) 
+<p> 1은 9보다 작다.(1 &lt; 9)</p>
+
+~보다 크다(>)
+<p>9는 1보다 크다.(3 &gt; 1)</p>
+```
+
+|Entity Name|Result|
+|----|----|
+|\&nbsp;|공백 1개|
+|\&lt;|\<|
+|\&gt;|\>|
+|\&amp;|&|
+|\&quot;|"|
+|\&apos;|'|
+|\&cent;|¢|
+|\&pound;|£|
+|\&yen;|¥|
+|\&euro;|€|
+|\&copy|©|
+|\&reg;|®|
+
+
+### HTML Forms
++ HTML forms은 사용자의 입력 데이터를 수집하기 위해 사용한다. 
++ 사용자가 입력한 데이터는 대부분 서버로 전송이 되며, 서버에서 처리한다.
++ \<form\>~\</form\> 태그로 구성되며 그 하위 요소에는 HTML 양식을 구성하기 위한 텍스트 필드(text), 체크박스(checkbox), 라디오 버튼(radio), 제출버튼 등으로 구성된다.
+
+#### \<input\> 요소
++ type 속성
+	+ \<input\>요소는 form에서 가장 많이 사용하는 태그다.
+	+ \<input\>은 type 속성에 따라서 다양하게 출력된다.
+	+ \<input type="text"\> - 한줄 텍스트 입력필드를 표시한다.
+	+ \<input type="password"\> - 비밀번호 입력필드를 표시한다.
+	+ \<input type="radio"\> - 라디오 버튼을 표시한다(여러개 선택 항목 중 하나 선택).
+	+ \<input type="checkbox"\> - 확인란을 표시한다(선택 항목을 여러개 선택).
+	+ \<input type="submit"\> - 제출 버튼 표시한다.
+	+ \<input type="button"\> - 클릭가능한 버튼을 표시한다.
+	+ \<input type="hidden"\> - 값을 숨김 처리 하여 데이터를 전송할때 사용한다.
+	+ \<input type="image"\> - 제출버튼이나 src 속성으로 이미지 제출 버튼을 만들 수 있다.
+
++ name 속성
+	+ form 안에서 데이터 입력 필드를 추가할 때 각각의 입력필드는 name 속성 값을 지정해야 한다.
+	+ name 값은 데이터를 구분하는 필드명으로 사용된다.
+
++ 텍스트 필드
+<form>
+   <label for="username">아이디:</label><br>
+   <input type="text" name="username" id="username"><br>
+   <label for="password">비밀번호:</label><br>
+   <input type="password" name="password" id="password">
+</form>
+
+```
+<form>
+   <label for="username">아이디:</label><br>
+   <input type="text" name="username" id="username"><br>
+   <label for="password">비밀번호:</label><br>
+   <input type="password" name="password" id="password">
+</form>
+```
+
++ 라디오 버튼
+<form>
+   <input type="radio" id="male" name="gender" value="male">
+   <label for="male">남자</label>
+   <input type="radio" id="female" name="gender" value="female">
+   <label for="female">여자</label>
+</form>
+
+```
+<form>
+   <input type="radio" id="male" name="gender" value="male">
+   <label for="male">남자</label>
+   <input type="radio" id="female" name="gender" value="female">
+   <label for="female">여자</label>
+</form>
+```
+
++ 체크박스
+```
+<form>
+  <input type="checkbox" name="vehicle[]" value="Bike" id="vehicle_bike">
+  <label for="vehicle_bike">자전거</label>
+  <input type="checkbox" name="vehicle[]" value="Car" id="vehicle_car">
+  <label for="vehicle_car">자동차</label>
+  <input type="checkbox" name="vehicle[]" value="Boat" id="vehicle_boat">
+  <label for="vehicle_boat">배</label>
+</form>
+```
+
+- 제출버튼
+```
+<form action='board_ps.php'>
+   <label for="username">아이디:</label><br>
+   <input type="text" name="username" id="username"><br>
+   <label for="password">비밀번호:</label><br>
+   <input type="password" name="password" id="password">
+   <input type="submit" value="로그인">
+</form>
+```
+
+### \<select\> 요소
+- 드롭다운 형태의 목록을 정의 합니다.
+```
+<label for="cars">자동차를 선택하세요 : </label>
+<select id="cars" name="cars">
+   <option value=''> - 선택하세요 -</option>
+   <option value='액센트'>액센트</option>
+   <option value='아반떼'>아반떼</option>
+   <option value='소나타'>소나타</option>
+   <option value='그랜져'>그랜져</option>
+</select>
+```
+
+- selected 속성
+	- 미리 선택된 옵션을 정의할 경우 선택처리할 <option>에 selected 속성을 추가합니다.
+	```
+	<option value='그랜져' selected>그랜져</option>
+	```
+	
+- size 속성
+```
+<select>에 size 속성을 지정하면 한번에 보이는 갯수를 지정할 수 있습니다.
+<select id="cars" name="cars" size="3">
+   <option value=''> - 선택하세요 -</option>
+   <option value='액센트'>액센트</option>
+   <option value='아반떼'>아반떼</option>
+   <option value='소나타'>소나타</option>
+   <option value='그랜져'>그랜져</option>
+</select>
+```
+
+- multiple 속성 
+	- 사용자가 둘 이상의 값을 선택할 수 있도록 할때 사용
+
+```
+<select id="cars" name="cars" multiple>
+   <option value=''> - 선택하세요 -</option>
+   <option value='액센트'>액센트</option>
+   <option value='아반떼'>아반떼</option>
+   <option value='소나타'>소나타</option>
+   <option value='그랜져'>그랜져</option>
+</select>
+```
+
+### \<textarea\> 요소
+- 여러 줄을 입력할수 있는 텍스트 영역을 정의합니다.
+- rows 속성 - 텍스트영역에서 보이는 영역 줄 수
+- cols 속성 - 텍스트영역에서 보이는 폭을 지정합니다.
+
+```
+예)
+<textarea name="contents" rows="10" cols="30">
+내용
+</textarea>
+```
+
+### Form 속성(Attributes)
+
+- action 속성<br>form이 제출될때 데이터를 전송할 경로를 설정합니다.
+```
+<form action='board_ps.php'>
+   <label for="username">아이디:</label><br>
+   <input type="text" name="username" id="username"><br>
+   <label for="password">비밀번호:</label><br>
+   <input type="password" name="password" id="password">
+   <input type="submit" value="로그인">
+</form>
+```
+
+- method 속성
+	- 양식(form) 데이터를 제출할때 사용할 HTTP 전송방식을 지정합니다.
+	- 일반적으로 method는 GET과 POST을 많이 사용하며, 기본값은 GET 입니다.(아무것도 지정하지 않은 경우)
+
+- GET 방식
+	- URL에 변수(데이터)를 포함시켜 요청한다.
+	- URL에 데이터가 노출되어 보안에 취약하다.
+
+- POST방식 
+	- URL에 변수(데이터)를 노출하지 않고 요청한다.
+	- URL에 데이터가 노출되지 않아서 기본 보안은 되어있다.
+
+
+- 자동완성(autocomplete) 속성
+	- autocomplete 속성을 켜면 브라우저는 사용자가 이전에 입력한 데이터를 기반으로 자동으로 값을 완성합니다.
+
+	- 일반적으로 값을 지정하지 않는다면 기본으로 자동완성이 됩니다. 
+	- 자동완성을 사용하지 않는 경우 autocomplete='off'로 설정합니다.
+	
+	```
+	예)
+	<form action='board_ps.php' autocomplete='off'>
+
+	</form>
+	```
+
+- enctype 속성<br>POST 방식으로 데이터를 전송할때 양식 데이터가 인코딩 되어야 할 경우 사용합니다.<br>주로 파일 업로드와 같이 file 태그와 함께 사용됩니다.
+
+```
+<form action='board_ps.php' method='post' enctyle="multipart/form-data">
+파일 : <input type='file' name='file'>
+<input type="submit" value="업로드">
+</form>
+```
+
+- target 속성
+	- form이 제출된 후 표시할 위치를 지정합니다.
+
+
+### HTML \<input\> 속성
+- value (초기 값)<br>입력 필드의 초기 값을 지정합니다.
+```
+예)
+<form action='board_ps.php'>
+   <label for="username">아이디:</label><br>
+   <input type="text" name="username" id="username" value='bluebird'><br>
+   <label for="password">비밀번호:</label><br>
+   <input type="password" name="password" id="password">
+   <input type="submit" value="로그인">
+</form>
+```
+
+- readonly (읽기전용)<br>읽기 전용 속성이며 수정이 불가 합니다.<br>하기 username은 readonly로 bluebird값으로 고정이 되며 수정이 불가해집니다.<br>(그러나 개발자도구를 사용하여 값 변조는 가능하므로 반드시 데이터 처리 서버쪽에서 데이터 검증을 하여야 합니다.)
+```
+<form action='board_ps.php'>
+   <label for="username">아이디:</label><br>
+   <input type="text" name="username" id="username" value='bluebird' readonly><br>
+   <label for="password">비밀번호:</label><br>
+   <input type="password" name="password" id="password">
+   <input type="submit" value="로그인">
+</form>
+```
+
+- disabled (비활성화 된 속성)<br>비활성화된 입력필드는 사용할 수 없으며 클릭 할 수 없습니다.<br>또한 비활성화딘 입력필드 값은 form을 제출해도 전송되지 않습니다.
+```
+<form action='board_ps.php'>
+   <label for="username">아이디:</label><br>
+   <input type="text" name="username" id="username" value='bluebird' disabled><br>
+   <label for="password">비밀번호:</label><br>
+   <input type="password" name="password" id="password">
+   <input type="submit" value="로그인">
+</form>
+```
+
+- size (크기속성)<br>입력필드의 너비를 지정합니다.
+```
+예)
+   <input type="text" name="username" id="username" size='15'>
+```
+
+- maxlength (최대 문자 수)
+```
+예)
+최대 입력 가능 문자 수를 10개로 제한 
+<input type="text" name="username" id="username" maxlength='10'>
+```
+
+- multiple (다중 속성)<br>입력 필드에 둘 이상의 값을 입력 할수 있도록 지정합니다.<br>대표적으로 \<select\>나 \<input type='file'\>에서 사용됩니다.
+
+```
+예) 
+<input type='file' name='files[]' multiple>
+```
+
+- placeholder (자리표시자 속성)<br>입력 필드의 입력 안내문구를 설정 할수 있습니다.
+```
+예)
+<input type="text" name="username" id="username" placeholder='아이디를 입력하세요.'>
+```
+
+- required (필수속성)<br>form 제출시 반드시 입력해야 하는 필드를 정의합니다.
+```
+예)
+username은 form 제출시 반드시 입력해야 하는 필드가 됩니다.
+<input type="text" name="username" id="username" required>
+```
+
+- autofocus (자동초첨 속성)<br>페이지가 로드될때 자동으로 focus될 필드를 설정합니다.
+```
+<form action='board_ps.php'>
+   <label for="username">아이디:</label><br>
+   <input type="text" name="username" id="username" autofocus><br>
+   <label for="password">비밀번호:</label><br>
+   <input type="password" name="password" id="password">
+   <input type="submit" value="로그인">
+</form>
+```
+
+## HTML 태그 참조
+- HTML 태그와 속성은 전부 암기할 수는 없습니다. 중요한 것은 필요할때 적절한 사용방법을 찾는 것 입니다.
+- 어느정도 HTML 태그를 눈에 익혀 놓으면 필요할 때 쉽게 찾을 수 있습니다. 
+
+- 참고 URL 
+[https://www.w3schools.com/tags/ref_byfunc.asp](https://www.w3schools.com/tags/ref_byfunc.asp)
+- 참고 URL에 있는 태그의 예시를 직접 코딩하면서 연습해 보면 큰 도움이 됩니다.<b>(꼭 한번씩은 해 보세요)</b>
