@@ -748,13 +748,6 @@ window.addEventListener("load", function(e) {
 	+ name 값은 데이터를 구분하는 필드명으로 사용된다.
 
 + 텍스트 필드
-<form>
-   <label for="username">아이디:</label><br>
-   <input type="text" name="username" id="username"><br>
-   <label for="password">비밀번호:</label><br>
-   <input type="password" name="password" id="password">
-</form>
-
 ```
 <form>
    <label for="username">아이디:</label><br>
@@ -765,12 +758,6 @@ window.addEventListener("load", function(e) {
 ```
 
 + 라디오 버튼
-<form>
-   <input type="radio" id="male" name="gender" value="male">
-   <label for="male">남자</label>
-   <input type="radio" id="female" name="gender" value="female">
-   <label for="female">여자</label>
-</form>
 
 ```
 <form>
@@ -804,28 +791,29 @@ window.addEventListener("load", function(e) {
 </form>
 ```
 
-### \<select\> 요소
-- 드롭다운 형태의 목록을 정의 합니다.
+#### \<select\> 요소
++ 드롭다운 형태의 목록을 정의 합니다.
 ```
 <label for="cars">자동차를 선택하세요 : </label>
 <select id="cars" name="cars">
    <option value=''> - 선택하세요 -</option>
    <option value='액센트'>액센트</option>
    <option value='아반떼'>아반떼</option>
-   <option value='소나타'>소나타</option>
+   <option value='쏘나타'>쏘나타</option>
    <option value='그랜져'>그랜져</option>
 </select>
 ```
 
-- selected 속성
-	- 미리 선택된 옵션을 정의할 경우 선택처리할 <option>에 selected 속성을 추가합니다.
++ selected 속성
+	+ 미리 선택된 옵션을 정의할 경우 선택 처리할 \<option\>에 selected 속성을 추가한다.
 	```
 	<option value='그랜져' selected>그랜져</option>
 	```
 	
-- size 속성
++ size 속성
+   + \<select\>에 size 속성을 지정하면 한번에 보이는 갯수를 지정할 수 있다.
+
 ```
-<select>에 size 속성을 지정하면 한번에 보이는 갯수를 지정할 수 있습니다.
 <select id="cars" name="cars" size="3">
    <option value=''> - 선택하세요 -</option>
    <option value='액센트'>액센트</option>
@@ -835,34 +823,34 @@ window.addEventListener("load", function(e) {
 </select>
 ```
 
-- multiple 속성 
-	- 사용자가 둘 이상의 값을 선택할 수 있도록 할때 사용
++ multiple 속성 
+	+ 사용자가 둘 이상의 값을 선택할 수 있도록 할때 사용한다.
 
 ```
 <select id="cars" name="cars" multiple>
    <option value=''> - 선택하세요 -</option>
-   <option value='액센트'>액센트</option>
+   <option value='엑센트'>엑센트</option>
    <option value='아반떼'>아반떼</option>
    <option value='소나타'>소나타</option>
    <option value='그랜져'>그랜져</option>
 </select>
 ```
 
-### \<textarea\> 요소
-- 여러 줄을 입력할수 있는 텍스트 영역을 정의합니다.
-- rows 속성 - 텍스트영역에서 보이는 영역 줄 수
-- cols 속성 - 텍스트영역에서 보이는 폭을 지정합니다.
+#### \<textarea\> 요소
+
++ 여러 줄을 입력할수 있는 텍스트 영역을 정의한다.
++ rows 속성 - 텍스트 영역에서 보이는 영역의 줄의 갯수를 지정한다.
++ cols 속성 - 텍스트 영역에서 보이는 폭을 지정한다.
 
 ```
-예)
 <textarea name="contents" rows="10" cols="30">
 내용
 </textarea>
 ```
 
-### Form 속성(Attributes)
+#### Form 속성(Attributes)
 
-- action 속성<br>form이 제출될때 데이터를 전송할 경로를 설정합니다.
++ action 속성<br>form이 제출될 때 데이터를 전송할 경로를 설정한다.
 ```
 <form action='board_ps.php'>
    <label for="username">아이디:</label><br>
@@ -873,33 +861,34 @@ window.addEventListener("load", function(e) {
 </form>
 ```
 
-- method 속성
-	- 양식(form) 데이터를 제출할때 사용할 HTTP 전송방식을 지정합니다.
-	- 일반적으로 method는 GET과 POST을 많이 사용하며, 기본값은 GET 입니다.(아무것도 지정하지 않은 경우)
++ method 속성
+	+ 양식(form) 데이터를 제출할때 사용할 HTTP 전송방식을 지정한다.
+	+ 일반적으로 method는 GET과 POST을 많이 사용하며, 기본값은 GET 이다(아무것도 지정하지 않은 경우).
 
-- GET 방식
-	- URL에 변수(데이터)를 포함시켜 요청한다.
-	- URL에 데이터가 노출되어 보안에 취약하다.
+   + GET 방식
+      + URL에 변수(데이터)를 포함시켜 요청한다.
+      + URL에 데이터가 노출되어 보안에 취약하다.
 
-- POST방식 
-	- URL에 변수(데이터)를 노출하지 않고 요청한다.
-	- URL에 데이터가 노출되지 않아서 기본 보안은 되어있다.
+   + POST방식 
+      + URL에 변수(데이터)를 노출하지 않고 요청한다.
+      + URL에 데이터가 노출되지 않아서 기본 보안은 되어있다.
 
 
-- 자동완성(autocomplete) 속성
-	- autocomplete 속성을 켜면 브라우저는 사용자가 이전에 입력한 데이터를 기반으로 자동으로 값을 완성합니다.
++ 자동완성(autocomplete) 속성
+	+ autocomplete 속성을 켜면 브라우저는 사용자가 이전에 입력한 데이터를 기반으로 자동으로 값을 완성한다.
 
-	- 일반적으로 값을 지정하지 않는다면 기본으로 자동완성이 됩니다. 
-	- 자동완성을 사용하지 않는 경우 autocomplete='off'로 설정합니다.
+	+ 일반적으로 값을 지정하지 않는다면 기본으로 자동완성이 된다. 
+	+ 자동완성을 사용하지 않는 경우 autocomplete='off'로 설정한다.
 	
 	```
-	예)
 	<form action='board_ps.php' autocomplete='off'>
 
 	</form>
 	```
 
-- enctype 속성<br>POST 방식으로 데이터를 전송할때 양식 데이터가 인코딩 되어야 할 경우 사용합니다.<br>주로 파일 업로드와 같이 file 태그와 함께 사용됩니다.
++ enctype 속성
+   + POST 방식으로 데이터를 전송할때 양식 데이터가 인코딩 되어야 할 경우 사용한다.
+   + 주로 파일 업로드와 같이 file 태그와 함께 사용한다.
 
 ```
 <form action='board_ps.php' method='post' enctyle="multipart/form-data">
@@ -908,14 +897,15 @@ window.addEventListener("load", function(e) {
 </form>
 ```
 
-- target 속성
-	- form이 제출된 후 표시할 위치를 지정합니다.
++ target 속성
+	+ form이 제출된 후 표시할 위치를 지정한다.
 
 
-### HTML \<input\> 속성
-- value (초기 값)<br>입력 필드의 초기 값을 지정합니다.
+#### HTML \<input\> 속성
+
++ value (초기 값)
+   + 입력 필드의 초기 값을 지정한다.
 ```
-예)
 <form action='board_ps.php'>
    <label for="username">아이디:</label><br>
    <input type="text" name="username" id="username" value='bluebird'><br>
@@ -925,7 +915,10 @@ window.addEventListener("load", function(e) {
 </form>
 ```
 
-- readonly (읽기전용)<br>읽기 전용 속성이며 수정이 불가 합니다.<br>하기 username은 readonly로 bluebird값으로 고정이 되며 수정이 불가해집니다.<br>(그러나 개발자도구를 사용하여 값 변조는 가능하므로 반드시 데이터 처리 서버쪽에서 데이터 검증을 하여야 합니다.)
++ readonly (읽기전용)
+   + 읽기 전용 속성이며 수정이 불가 하다.
+   + username은 readonly로 bluebird값으로 고정이 되며 수정이 불가해진다.
+   + 그러나 개발자도구를 사용하여 값 변조는 가능하므로 반드시 데이터 처리 서버 쪽에서 데이터 검증을 해야한다.
 ```
 <form action='board_ps.php'>
    <label for="username">아이디:</label><br>
@@ -936,7 +929,9 @@ window.addEventListener("load", function(e) {
 </form>
 ```
 
-- disabled (비활성화 된 속성)<br>비활성화된 입력필드는 사용할 수 없으며 클릭 할 수 없습니다.<br>또한 비활성화딘 입력필드 값은 form을 제출해도 전송되지 않습니다.
++ disabled (비활성화 된 속성)
+   + 비활성화된 입력필드는 사용할 수 없으며 클릭 할 수 없다.
+   + 비활성화된 입력필드 값은 form을 제출해도 전송되지 않는다.
 ```
 <form action='board_ps.php'>
    <label for="username">아이디:</label><br>
@@ -947,40 +942,42 @@ window.addEventListener("load", function(e) {
 </form>
 ```
 
-- size (크기속성)<br>입력필드의 너비를 지정합니다.
++ size (크기속성)
+   + 입력 필드의 너비를 지정한다.
 ```
-예)
    <input type="text" name="username" id="username" size='15'>
 ```
 
-- maxlength (최대 문자 수)
++ maxlength (최대 문자 수)
+   + 입력 필드에 입력 가능한 문자 수를 제한한다.
 ```
-예)
 최대 입력 가능 문자 수를 10개로 제한 
 <input type="text" name="username" id="username" maxlength='10'>
 ```
 
-- multiple (다중 속성)<br>입력 필드에 둘 이상의 값을 입력 할수 있도록 지정합니다.<br>대표적으로 \<select\>나 \<input type='file'\>에서 사용됩니다.
++ multiple (다중 속성)
+   + 입력 필드에 둘 이상의 값을 입력할 수 있도록 지정한다.
+   + 대표적으로 \<select\>나 \<input type='file'\>에서 사용된다.
 
 ```
-예) 
 <input type='file' name='files[]' multiple>
 ```
 
-- placeholder (자리표시자 속성)<br>입력 필드의 입력 안내문구를 설정 할수 있습니다.
++ placeholder (자리표시자 속성)
+   + 입력 필드의 입력 안내문구를 설정할 수 있다.
 ```
-예)
 <input type="text" name="username" id="username" placeholder='아이디를 입력하세요.'>
 ```
 
-- required (필수속성)<br>form 제출시 반드시 입력해야 하는 필드를 정의합니다.
++ required (필수속성)
+   + form 제출시 반드시 입력해야 하는 필드를 정의한다.
 ```
-예)
-username은 form 제출시 반드시 입력해야 하는 필드가 됩니다.
+username은 form 제출시 반드시 입력해야 하는 필드가 된다.
 <input type="text" name="username" id="username" required>
 ```
 
-- autofocus (자동초첨 속성)<br>페이지가 로드될때 자동으로 focus될 필드를 설정합니다.
++ autofocus (자동초첨 속성)
+   + 페이지가 로드될 때 자동으로 focus될 필드를 설정한다.
 ```
 <form action='board_ps.php'>
    <label for="username">아이디:</label><br>
@@ -992,9 +989,8 @@ username은 form 제출시 반드시 입력해야 하는 필드가 됩니다.
 ```
 
 ## HTML 태그 참조
-- HTML 태그와 속성은 전부 암기할 수는 없습니다. 중요한 것은 필요할때 적절한 사용방법을 찾는 것 입니다.
-- 어느정도 HTML 태그를 눈에 익혀 놓으면 필요할 때 쉽게 찾을 수 있습니다. 
+- HTML 태그와 속성은 전부 암기할 수는 없다. 중요한 것은 필요할때 적절한 사용방법을 찾는 것이다.
+- 어느정도 HTML 태그를 눈에 익혀 놓으면 필요할 때 쉽게 찾을 수 있다. 
 
 - 참고 URL 
-[https://www.w3schools.com/tags/ref_byfunc.asp](https://www.w3schools.com/tags/ref_byfunc.asp)
-- 참고 URL에 있는 태그의 예시를 직접 코딩하면서 연습해 보면 큰 도움이 됩니다.<b>(꼭 한번씩은 해 보세요)</b>
+[https://github.com/yonggyo1125]
