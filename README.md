@@ -262,7 +262,7 @@ HTML \<a\>태그는 하이퍼링크를 정의합니다. a 태그에서 가장 �
 
 + 절대경로
 	+ 절대 경로란 특정문서 페이지 또는 이미지등 자원에 접근할 수 있는 전체 URL을 의미.
-	+ photo.jpg 파일이 서버에서 /web/public/img/photo.jpg에 위치 해 있다면 \<a href='/web/public/img/photo.jpg'\>사진\</a\>과 같이 표현할 수 있다.
+	+ photo.jpg 파일이 서버에서 /web/public/img/photo.jpg에 위치 해 있다면<br> \<a href='/web/public/img/photo.jpg'\>사진\</a\>과 같이 표현할 수 있다.
 
 + 상대경로
 	+ 서버에서 /web/public/img/photo.jpg에 위치해 있고 현재 html 경로가 /web/public이라면 \<a href='img/photo.jpg'\> 형태로 표현할 수 있다.(현재 경로 기준)
@@ -402,7 +402,7 @@ HTML \<a\>태그는 하이퍼링크를 정의합니다. a 태그에서 가장 �
 
 + 용어에 대한 설명을 위한 구조로 구성되어 있는 리스트.
 + \<dl\>~\</dl\> 태그이며 하나의 행을 구성. 
-+ 각 행은 \<dt\>~\</dt\>(항목명)와 \<dd\>~\</dd\>(항목 설명)으로 구성.
++ 각 행은 \<dt\>~</dt\>(항목명)와 \<dd\>~\</dd\>(항목 설명)으로 구성.
 
 ><dl>
 >   <dt>상품명</dt>
@@ -994,3 +994,4 @@ username은 form 제출시 반드시 입력해야 하는 필드가 된다.
 
 - 참고 URL 
 [https://github.com/yonggyo1125]
+
